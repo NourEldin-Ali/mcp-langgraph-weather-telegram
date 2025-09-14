@@ -37,7 +37,7 @@ Personal project that wires two MCP servers (Weather and Telegram) to LangGraph 
 
 ### 🧠 Agent Think graph (example)
 
-![Agent Think Graph](assets/agent_think.png)
+![Agent Think Graph](assets/agent-think-graph.png)
 
 ## 🚀 Quick Start (Local)
 1) Create a virtualenv and install dependencies
@@ -102,7 +102,52 @@ Tip: Commit an `.env.example` with placeholders, but never commit your real `.en
 
 ### 📸 Optional Flow graph image
 
-![Flow Agent Graph](assets/agent_flow.png)
+![Flow Agent Graph](assets/agent-flow-graph.png)
+
+## 🧪 Examples
+
+### 🔁 Flow Agent
+- Input: enter a single location (e.g., “Paris, FR”) and click Run.
+- Output (Telegram message example):
+![Flow UI Example](assets/ui-flow-example.png)
+```
+• Paris, FR — 18°C, feels 17°C
+• Humidity 62% · Wind 8 km/h
+```
+Notes: Actual values depend on current weather and selected units.
+
+### 🧠 Agent Think (combined)
+- Instruction:
+![Agent Think UI Example](assets/ui-think-example.png)
+```
+Get the weather for Paris and Berlin. Send a single concise Telegram message.
+```
+- Output (Telegram message example):
+```
+• Paris, FR: 18°C, clear · Wind 10 km/h
+• Berlin, DE: 16°C, cloudy · Wind 12 km/h
+```
+
+### 🧠 Agent Think (separate)
+- Instruction:
+```
+Get weather for Madrid and Barcelona and send separate Telegram messages for each.
+```
+- Output: two messages (one per city), for example:
+```
+• Madrid, ES: 24°C, sunny · Wind 9 km/h
+• Barcelona, ES: 22°C, breezy · Wind 14 km/h
+```
+Notes: When unspecified, Agent Think defaults to a single combined message.
+
+### 🖼️ Screenshots
+- Agent UI
+
+![Agent UI](assets/agent-ui.png)
+
+- Agent Results
+
+![Agent Results](assets/agent-results.png)
 
 ## 📁 Repository Layout (partial)
 ```
