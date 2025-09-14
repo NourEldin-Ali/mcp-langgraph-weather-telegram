@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  flow:
+    build:
+      context: .
+      target: flow
+    image: mcp-weather-telegram:flow
+    container_name: mcp-weather-telegram-flow
+    env_file: .env
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+
+  think:
+    build:
+      context: .
+      target: think
+    image: mcp-weather-telegram:think
+    container_name: mcp-weather-telegram-think
+    env_file: .env
+    ports:
+      - "8502:8502"
+    restart: unless-stopped

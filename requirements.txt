@@ -1,0 +1,12 @@
+python-dotenv
+pydantic
+requests
+tenacity
+mcp
+modelcontextprotocol
+langchain
+langgraph
+openai
+langchain-openai
+langchain-groq
+streamlit

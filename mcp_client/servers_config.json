@@ -1,0 +1,23 @@
+{
+    "mcpServers": {
+        "weather": {
+            "command": "python",
+            "args": [
+                "mcp_servers/weather_server/server.py"
+            ],
+            "env": {
+                "DEFAULT_WEATHER_UNITS": "metric"
+            }
+        },
+        "telegram": {
+            "command": "python",
+            "args": [
+                "mcp_servers/telegram_server/server.py"
+            ],
+            "env": {
+                "TELEGRAM_BOT_TOKEN": "${TELEGRAM_BOT_TOKEN}",
+                "TELEGRAM_CHAT_ID": "${TELEGRAM_CHAT_ID}"
+            }
+        }
+    }
+}
