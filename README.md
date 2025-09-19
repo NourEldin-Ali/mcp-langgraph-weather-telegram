@@ -173,3 +173,16 @@ assets/                         # README images
 
 ## ⚠️ Disclaimer
 This is a personal project for learning and demonstration purposes. It is not an official product and has no affiliation with OpenAI, Telegram, Open‑Meteo, LangChain, or Streamlit. Use at your own risk and review the code and configuration before deploying anywhere sensitive.
+## Telegram Listener Loop
+If you want the agent to react to incoming Telegram chats without Streamlit, run the polling loop:
+
+```
+python -m agent_think.runner --timeout 20
+```
+
+The listener uses the same MCP servers configuration (`mcp_client/servers_config.json`). Ensure the following environment variables are set before starting it:
+- `TELEGRAM_BOT_TOKEN`: Bot token used by the Telegram MCP server.
+- `TELEGRAM_CHAT_ID`: Default chat for outbound messages (still required; per-message chats are derived from updates).
+- LLM provider variables (`LLM_TYPE`, credentials) so the agent can plan tool calls.
+
+The script keeps the latest `update_id` in memory while it is running; restart from scratch replays any unseen updates. Pass `--idle-sleep` to control how long the loop waits between empty polls, and adjust `--timeout` to tune long polling.
