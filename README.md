@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/noureldin-ali-mcp-langgraph-weather-telegram-badge.png)](https://mseep.ai/app/noureldin-ali-mcp-langgraph-weather-telegram)
+
 # 🌤️ MCP + LangGraph: Weather → Telegram (Streamlit)
 
 Personal project that wires two MCP servers (Weather and Telegram) to LangGraph agents and simple Streamlit UIs. It fetches current weather and sends a concise summary to your Telegram chat. Includes both a fixed “Flow Agent” and a tool‑using “Agent Think” mode.
